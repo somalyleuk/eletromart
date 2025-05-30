@@ -1,0 +1,68 @@
+.hero-bg {
+  background-image: url("https://cdn.mos.cms.futurecdn.net/BiHGDFCvGF4sA7nkm5x5hd.gif");
+  background-size: cover;
+  background-position: center;
+}
+
+.brand-card {
+  background-size: cover;
+  background-position: center;
+  min-height: 200px;
+}
+
+.video-aspect-ratio {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.video-aspect-ratio video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.hero-text-shadow {
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 123, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.6),
+    0 0 30px rgba(128, 0, 128, 0.5), 0 0 40px rgba(255, 165, 0, 0.4),
+    0 0 70px rgba(255, 105, 180, 0.3);
+}
+
+.discover-item {
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.discover-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.discover-item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  z-index: 1;
+}
+
+.discover-content {
+  position: relative;
+  z-index: 2;
+}

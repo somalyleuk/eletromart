@@ -1,832 +1,1096 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
-            name="description"
-            content="ElectroMart - Your one-stop shop for the latest electronics, gadgets, and tech accessories. Find amazing deals on laptops, smartphones, and more."/>
+      name="description"
+      content="ElectroMart - Your one-stop shop for the latest electronics, gadgets, and tech accessories. Find amazing deals on laptops, smartphones, and more." />
     <meta
-            name="keywords"
-            content="electronics, e-commerce, tech, gadgets, laptops, smartphones, ElectroMart, online shopping, apple, samsung, repairs, services, accessories, discover"/>
-    <meta name="author" content="ElectroMart Team"/>
+      name="keywords"
+      content="electronics, e-commerce, tech, gadgets, laptops, smartphones, ElectroMart, online shopping, apple, samsung, repairs, services, accessories, discover" />
+    <meta name="author" content="ElectroMart Team" />
     <title>ElectroMart - Discover the Future of Tech, Brands & Services</title>
     <link
-            href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-            rel="stylesheet"/>
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet" />
     <link
-            href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"
-            rel="stylesheet"/>
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <!-- Link to your custom styles -->
-    <link href="../css/styles.css" rel="stylesheet"/>
-    <style>
-        /* You can add page-specific small CSS tweaks here or keep them in styles.css */
-        .hero-bg {
-            background-image: url('https://images.unsplash.com/photo-1526738549149-8e07eca6c147?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80'); /* Replace with your hero image */
-            background-size: cover;
-            background-position: center;
-        }
-
-        .brand-card {
-            background-size: cover;
-            background-position: center;
-            min-height: 200px; /* Adjust as needed */
-        }
-
-        .video-aspect-ratio {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-        }
-
-        .video-aspect-ratio video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensures video covers the area, might crop */
-        }
-
-        /* Custom text shadow for hero text - Enhanced for more pop */
-        .hero-text-shadow {
-            color: white; /* Ensure text color is white for shadows to be visible */
-            text-shadow: 0 0 10px rgba(0, 123, 255, 0.7), /* Blue base */ 0 0 20px rgba(0, 255, 255, 0.6), /* Cyan layer */ 0 0 30px rgba(128, 0, 128, 0.5), /* Purple layer */ 0 0 40px rgba(255, 165, 0, 0.4), /* Orange layer */ 0 0 70px rgba(255, 105, 180, 0.3); /* Optional: A wider, softer pink/hotpink for more bloom */
-        }
-
-        .discover-item {
-            min-height: 400px; /* Ensure items have enough height */
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end; /* Align content to the bottom */
-            padding: 2rem;
-            border-radius: 0.75rem; /* 12px */
-            overflow: hidden;
-            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-        }
-
-        .discover-item:hover {
-            transform: scale(1.03);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 8px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .discover-item::before { /* Gradient overlay for text readability */
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 70%; /* Adjust height of gradient */
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-            z-index: 1;
-        }
-
-        .discover-content {
-            position: relative;
-            z-index: 2;
-        }
-    </style>
-</head>
-<body class="bg-gray-100 font-sans">
-<!-- Navigation Bar -->
-<nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
-    <div
-            class="container mx-auto px-6 py-3 flex justify-between items-center">
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="../css/home.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+      <div
+        class="container mx-auto px-6 py-3 flex justify-between items-center">
         <a href="index.html" class="text-2xl font-bold text-purple-600"
-        >ElectroMart</a
+          >ElectroMart</a
         >
         <div class="hidden md:flex space-x-6 items-center">
-            <a
-                    href="index.html"
-                    class="text-purple-600 border-b-2 border-purple-600 px-3 py-2 rounded-md text-sm font-medium"
-                    aria-current="page"
+          <a
+            href="index.html"
+            class="text-purple-600 border-b-2 border-purple-600 px-3 py-2 rounded-md text-sm font-medium"
+            aria-current="page"
             >Home</a
-            >
-            <a
-                    href="pages/products.html"
-                    class="text-gray-700 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium"
+          >
+          <a
+            href="./pages/product.html"
+            class="text-gray-700 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium"
             >Products</a
-            >
-            <!-- Example Dropdown for Categories using Flowbite -->
-            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 px-3 text-gray-700 hover:text-purple-600 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto">Categories
-                <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                </svg>
-            </button>
-            <!-- Dropdown menu -->
-            <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownLargeButton">
-                    <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Laptops</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Smartphones</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Accessories</a>
-                    </li>
-                </ul>
-            </div>
-            <a
-                    href="pages/aboutus.html"
-                    class="text-gray-700 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium"
+          >
+          <button
+            id="dropdownNavbarLink"
+            data-dropdown-toggle="dropdownNavbar"
+            class="flex items-center justify-between w-full py-2 px-3 text-gray-700 hover:text-purple-600 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto">
+            Categories
+            <svg
+              class="w-2.5 h-2.5 ms-2.5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6">
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 4 4 4-4" />
+            </svg>
+          </button>
+          <div
+            id="dropdownNavbar"
+            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+            <ul
+              class="py-2 text-sm text-gray-700 dark:text-gray-200"
+              aria-labelledby="dropdownLargeButton">
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Laptops</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Smartphones</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Accessories</a
+                >
+              </li>
+            </ul>
+          </div>
+          <a
+            href="./pages/aboutus.html"
+            class="text-gray-700 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium"
             >About Us</a
-            >
-            <a
-                    href="pages/contactus.html"
-                    class="text-gray-700 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium"
+          >
+          <a
+            href="./pages/contactus.html"
+            class="text-gray-700 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium"
             >Contact</a
-            >
+          >
         </div>
         <div class="flex items-center space-x-4">
-            <button aria-label="Search" class="text-gray-600 hover:text-purple-500">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                </svg>
-            </button>
-            <a href="#" aria-label="Cart" class="text-gray-600 hover:text-purple-500 relative">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M3 3h2l.4 2H7v2H4.4L7 15h10l3-8H8.4L8 7H3V3zm15 10H7l-2-7h12.75L18 13zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2z"></path>
-                </svg>
-                <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
-            </a>
-            <!-- Sign In / Sign Up Icon Button -->
-            <button id="openAuthModalButton" type="button" aria-label="Sign In or Sign Up" class="text-gray-600 hover:text-purple-500 p-2">
-                <i class="fas fa-user fa-lg"></i>
-            </button>
-            <!-- Mobile Menu Button -->
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-600 hover:text-purple-500 focus:outline-none">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path fill-rule="evenodd" d="M3 5h18M3 12h18M3 19h18" clip-rule="evenodd"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden hidden px-2 pt-2 pb-3 space-y-1 sm:px-3">
-        <a href="index.html" class="text-purple-600 bg-purple-50 hover:bg-purple-100 block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Home</a>
-        <a href="pages/products.html" class="text-gray-700 hover:bg-purple-50 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Products</a>
-        <a href="pages/aboutus.html" class="text-gray-700 hover:bg-purple-50 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">About Us</a>
-        <a href="pages/contactus.html" class="text-gray-700 hover:bg-purple-50 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
-        <!-- Sign In / Sign Up Icon Button for Mobile Menu -->
-        <button id="openAuthModalButtonMobile" type="button" aria-label="Sign In or Sign Up" class="mt-2 w-full flex items-center justify-center text-gray-600 hover:text-purple-500 p-2 hover:bg-purple-50 rounded-md">
-            <i class="fas fa-user fa-lg mr-2"></i> Sign In / Up
-        </button>
-    </div>
-</nav>
-
-<!-- Main Content -->
-<main class="pt-16">
-    <!-- Hero Section -->
-    <section class="hero-bg text-white py-20 md:py-32">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight hero-text-shadow">
-                Discover the Future of Tech
-            </h1>
-            <p class="text-lg md:text-xl mb-8 hero-text-shadow">
-                Get the latest gadgets and electronics at unbeatable prices.
-            </p>
-            <a
-                    href="pages/products.html"
-                    class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300"
-            >Shop Now</a
-            >
-        </div>
-    </section>
-
-    <!-- DISCOVER Section - Vivo Style -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center tracking-tight">
-                DISCOVER
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Discover Item 1 -->
-                <a href="#" class="discover-item group" style="background-image: url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80');">
-                    <div class="discover-content text-white">
-                        <h3 class="text-3xl font-bold mb-2">Next-Gen Laptops</h3>
-                        <p class="text-md mb-4 opacity-90">Powerhouse performance meets sleek design. Perfect for work and play.</p>
-                        <span class="font-semibold group-hover:underline">Explore Laptops &rarr;</span>
-                    </div>
-                </a>
-                <!-- Discover Item 2 -->
-                <a href="#" class="discover-item group" style="background-image: url('https://images.unsplash.com/photo-1604671368394-2240d0b1bb6c?auto=format&fit=crop&w=1200&q=80');">
-                    <div class="discover-content text-white">
-                        <h3 class="text-3xl font-bold mb-2">Smart Home Revolution</h3>
-                        <p class="text-md mb-4 opacity-90">Automate your life with our intelligent home devices.</p>
-                        <span class="font-semibold group-hover:underline">Shop Smart Home &rarr;</span>
-                    </div>
-                </a>
-            </div>
-            <!-- Optional: Add a third item for a different layout or if needed -->
-            <div class="mt-8">
-                <a href="#" class="discover-item group block" style="background-image: url('https://images.unsplash.com/photo-1593152164098-e3c7f0690935?auto=format&fit=crop&w=1200&q=80'); min-height: 300px;">
-                    <div class="discover-content text-white text-center w-full p-8">
-                        <h3 class="text-3xl font-bold mb-2">Immersive Audio Gear</h3>
-                        <p class="text-md mb-4 opacity-90">Headphones, speakers, and sound systems that bring your music to life.</p>
-                        <span class="font-semibold group-hover:underline">Discover Audio &rarr;</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="py-12 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
-                Shop by Category
-            </h2>
-            <div
-                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Category 1 -->
-                <a href="#" class="block group">
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform group-hover:scale-105 transition-transform duration-300">
-                        <img
-                                src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
-                                alt="Laptops"
-                                class="w-full h-48 object-cover"/>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-800">Laptops</h3>
-                        </div>
-                    </div>
-                </a>
-                <!-- Category 2 -->
-                <a href="#" class="block group">
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform group-hover:scale-105 transition-transform duration-300">
-                        <img
-                                src="https://images.unsplash.com/photo-1580910051074-3eb694886505?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c21hcnRwaG9uZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                                alt="Smartphones"
-                                class="w-full h-48 object-cover"/>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-800">Smartphones</h3>
-                        </div>
-                    </div>
-                </a>
-                <!-- Category 3 -->
-                <a href="#" class="block group">
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform group-hover:scale-105 transition-transform duration-300">
-                        <img
-                                src="https://images.unsplash.com/photo-1542751110-97427BB92657?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z2FtaW5nJTIwYWNjZXNzb3JpZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
-                                alt="Gaming Accessories"
-                                class="w-full h-48 object-cover"/>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-800">Gaming</h3>
-                        </div>
-                    </div>
-                </a>
-                <!-- Category 4 -->
-                <a href="#" class="block group">
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform group-hover:scale-105 transition-transform duration-300">
-                        <img
-                                src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29tcHV0ZXIlMjBwZXJpcGhlcmFsc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                                alt="Peripherals"
-                                class="w-full h-48 object-cover"/>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-800">Peripherals</h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Products Section -->
-    <section class="py-12 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <div class="flex justify-between items-center mb-8">
-                <h2 class="text-3xl font-bold text-gray-800">
-                    Featured Products
-                </h2>
-                <a href="pages/products.html" class="text-purple-600 hover:text-purple-800 font-semibold transition duration-300">
-                    View All Products &rarr;
-                </a>
-            </div>
-            <div
-                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                <!-- Product Card 1 -->
-                <article class="bg-white rounded-lg shadow-lg overflow-hidden group">
-                    <a href="pages/product-detail.html" class="block">
-                        <img
-                                src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                                alt="Modern Laptop"
-                                class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity duration-300"/>
-                    </a>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                            <a href="pages/product-detail.html" class="hover:text-purple-600">AeroBook Pro 15</a>
-                        </h3>
-                        <p class="text-sm text-gray-600 mb-3">High-performance laptop for professionals.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-purple-600">$1299.99</span>
-                            <button class="bg-purple-500 hover:bg-purple-600 text-white text-sm font-semibold py-2 px-4 rounded-lg transition duration-300">
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <!-- Product Card 2 -->
-                <article class="bg-white rounded-lg shadow-lg overflow-hidden group">
-                    <a href="pages/product-detail.html" class="block">
-                        <img
-                                src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aXBob25lJTIwMTR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
-                                alt="Smartphone X"
-                                class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity duration-300"/>
-                    </a>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                            <a href="pages/product-detail.html" class="hover:text-purple-600">PixelWave Phone</a>
-                        </h3>
-                        <p class="text-sm text-gray-600 mb-3">Latest smartphone with AI camera.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-purple-600">$799.00</span>
-                            <button class="bg-purple-500 hover:bg-purple-600 text-white text-sm font-semibold py-2 px-4 rounded-lg transition duration-300">
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <!-- Product Card 3 -->
-                <article class="bg-white rounded-lg shadow-lg overflow-hidden group">
-                    <a href="pages/product-detail.html" class="block">
-                        <img
-                                src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                                alt="Wireless Headphones"
-                                class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity duration-300"/>
-                    </a>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                            <a href="pages/product-detail.html" class="hover:text-purple-600">SoundWave Buds</a>
-                        </h3>
-                        <p class="text-sm text-gray-600 mb-3">Noise-cancelling wireless headphones.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-purple-600">$199.50</span>
-                            <button class="bg-purple-500 hover:bg-purple-600 text-white text-sm font-semibold py-2 px-4 rounded-lg transition duration-300">
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <!-- Product Card 4 -->
-                <article class="bg-white rounded-lg shadow-lg overflow-hidden group">
-                    <a href="pages/product-detail.html" class="block">
-                        <img
-                                src="https://images.unsplash.com/photo-1615663245841-d359903d0f30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c21hcnR3YXRjaHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                                alt="Smartwatch"
-                                class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity duration-300"/>
-                    </a>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                            <a href="pages/product-detail.html" class="hover:text-purple-600">ChronoFit Watch</a>
-                        </h3>
-                        <p class="text-sm text-gray-600 mb-3">Track your fitness and stay connected.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-purple-600">$249.00</span>
-                            <button class="bg-purple-500 hover:bg-purple-600 text-white text-sm font-semibold py-2 px-4 rounded-lg transition duration-300">
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Discover Our Brands/Features Section -->
-    <section class="py-12 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
-                Discover Our Top Brands & Features
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Brand/Feature Card 1: Apple -->
-                <a href="#" class="block group rounded-lg shadow-lg overflow-hidden">
-                    <div class="brand-card relative text-white flex flex-col justify-end p-6" style="background-image: url('https://images.unsplash.com/photo-1569770020232-E28068c93a1f?auto=format&fit=crop&w=600&q=80');">
-                        <div class="absolute inset-0 bg-black opacity-40 group-hover:opacity-50 transition-opacity duration-300"></div>
-                        <div class="relative z-10">
-                            <h3 class="text-2xl font-bold">Apple Ecosystem</h3>
-                            <p class="text-sm mt-1">Experience seamless integration with iPhone, Mac, and iPad.</p>
-                        </div>
-                    </div>
-                </a>
-                <!-- Brand/Feature Card 2: Samsung -->
-                <a href="#" class="block group rounded-lg shadow-lg overflow-hidden">
-                    <div class="brand-card relative text-white flex flex-col justify-end p-6" style="background-image: url('https://images.unsplash.com/photo-1610945415295-d95bf1609d32?auto=format&fit=crop&w=600&q=80');">
-                        <div class="absolute inset-0 bg-black opacity-40 group-hover:opacity-50 transition-opacity duration-300"></div>
-                        <div class="relative z-10">
-                            <h3 class="text-2xl font-bold">Samsung Innovation</h3>
-                            <p class="text-sm mt-1">Cutting-edge displays and powerful Galaxy devices.</p>
-                        </div>
-                    </div>
-                </a>
-                <!-- Brand/Feature Card 3: Gaming Power -->
-                <a href="#" class="block group rounded-lg shadow-lg overflow-hidden">
-                    <div class="brand-card relative text-white flex flex-col justify-end p-6" style="background-image: url('https://images.unsplash.com/photo-1580327344181-c11ac2a975e0?auto=format&fit=crop&w=600&q=80');">
-                        <div class="absolute inset-0 bg-black opacity-40 group-hover:opacity-50 transition-opacity duration-300"></div>
-                        <div class="relative z-10">
-                            <h3 class="text-2xl font-bold">Ultimate Gaming</h3>
-                            <p class="text-sm mt-1">High-performance PCs and next-gen consoles.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Spotlight Video Section -->
-    <section class="py-12 bg-gray-800 text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-6">See Our Products in Action</h2>
-            <p class="mb-8 text-gray-300 max-w-2xl mx-auto">Watch this short clip showcasing the amazing features and designs we offer.</p>
-            <div class="video-aspect-ratio max-w-3xl mx-auto rounded-lg overflow-hidden shadow-2xl">
-                <!-- Replace with your actual video file -->
-                <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=800&q=60">
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                    <!-- Add other video formats for broader compatibility if needed -->
-                    <!-- <source src="path/to/your/video.webm" type="video/webm"> -->
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Services Section -->
-    <section class="py-12 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-800 mb-10 text-center">
-                Our Services
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card 1: Repair -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-                    <div class="text-purple-600 mb-4">
-                        <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Expert Repairs</h3>
-                    <p class="text-gray-600 text-sm">Fast and reliable repair services for your devices. Screen replacements, battery issues, and more.</p>
-                    <a href="#" class="mt-4 inline-block text-purple-600 hover:text-purple-800 font-semibold">Learn More &rarr;</a>
-                </div>
-                <!-- Service Card 2: Trade-In -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-                    <div class="text-purple-600 mb-4">
-                        <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Trade-In Program</h3>
-                    <p class="text-gray-600 text-sm">Get value for your old devices when you upgrade to the latest tech with our easy trade-in process.</p>
-                    <a href="#" class="mt-4 inline-block text-purple-600 hover:text-purple-800 font-semibold">See Trade-In Values &rarr;</a>
-                </div>
-                <!-- Service Card 3: Tech Support -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-                    <div class="text-purple-600 mb-4">
-                        <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 0a3 3 0 104.243 4.243l3.536-3.536m-8.486 8.486l-3.536-3.536m0 0a3 3 0 10-4.243-4.243l3.536 3.536M12 18.75V21m-3.75-3.75H6m12 0h-2.25m-6.75 0H9.75M12 5.25V3m3.75 3.75H18m-12 0h2.25m6.75 0h-2.25M12 12a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Tech Support</h3>
-                    <p class="text-gray-600 text-sm">Our experts are here to help you with setup, troubleshooting, and any tech questions you have.</p>
-                    <a href="pages/contactus.html" class="mt-4 inline-block text-purple-600 hover:text-purple-800 font-semibold">Get Support &rarr;</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Recommended Accessories Section -->
-    <section class="py-12 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
-                Recommended Accessories
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Accessory Card 1 -->
-                <article class="bg-white rounded-lg shadow-lg overflow-hidden group">
-                    <a href="pages/product-detail.html?id=acc1" class="block">
-                        <img
-                                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=60"
-                                alt="Premium Headphones"
-                                class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity duration-300"/>
-                    </a>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                            <a href="pages/product-detail.html?id=acc1" class="hover:text-purple-600">AuraSound Headphones</a>
-                        </h3>
-                        <p class="text-sm text-gray-600 mb-3">Immersive audio experience.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-purple-600">$149.99</span>
-                            <button class="bg-purple-500 hover:bg-purple-600 text-white text-sm font-semibold py-2 px-4 rounded-lg transition duration-300">
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <!-- Accessory Card 2 -->
-                <article class="bg-white rounded-lg shadow-lg overflow-hidden group">
-                    <a href="pages/product-detail.html?id=acc2" class="block">
-                        <img
-                                src="https://images.unsplash.com/photo-1586953208448-3151cf797f51?auto=format&fit=crop&w=500&q=60"
-                                alt="Wireless Mouse"
-                                class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity duration-300"/>
-                    </a>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                            <a href="pages/product-detail.html?id=acc2" class="hover:text-purple-600">GlidePro Wireless Mouse</a>
-                        </h3>
-                        <p class="text-sm text-gray-600 mb-3">Ergonomic and precise.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-purple-600">$49.00</span>
-                            <button class="bg-purple-500 hover:bg-purple-600 text-white text-sm font-semibold py-2 px-4 rounded-lg transition duration-300">
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <!-- Accessory Card 3 -->
-                <article class="bg-white rounded-lg shadow-lg overflow-hidden group">
-                    <a href="pages/product-detail.html?id=acc3" class="block">
-                        <img
-                                src="https://images.unsplash.com/photo-1606220838315-056192d5f946?auto=format&fit=crop&w=500&q=60"
-                                alt="Laptop Sleeve"
-                                class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity duration-300"/>
-                    </a>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                            <a href="pages/product-detail.html?id=acc3" class="hover:text-purple-600">Guardian Laptop Sleeve</a>
-                        </h3>
-                        <p class="text-sm text-gray-600 mb-3">Stylish protection for your device.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-purple-600">$29.50</span>
-                            <button class="bg-purple-500 hover:bg-purple-600 text-white text-sm font-semibold py-2 px-4 rounded-lg transition duration-300">
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <!-- Accessory Card 4 -->
-                <article class="bg-white rounded-lg shadow-lg overflow-hidden group">
-                    <a href="pages/product-detail.html?id=acc4" class="block">
-                        <img
-                                src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?auto=format&fit=crop&w=500&q=60"
-                                alt="Portable Charger"
-                                class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity duration-300"/>
-                    </a>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                            <a href="pages/product-detail.html?id=acc4" class="hover:text-purple-600">PowerUp Portable Charger</a>
-                        </h3>
-                        <p class="text-sm text-gray-600 mb-3">Keep your devices charged on the go.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-purple-600">$39.99</span>
-                            <button class="bg-purple-500 hover:bg-purple-600 text-white text-sm font-semibold py-2 px-4 rounded-lg transition duration-300">
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action / Newsletter -->
-    <section class="py-12 bg-purple-600 text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-4">Stay Updated!</h2>
-            <p class="mb-6">Subscribe to our newsletter for the latest deals and product announcements.</p>
-            <form class="max-w-md mx-auto">
-                <div class="flex items-center">
-                    <label for="newsletter-email" class="sr-only">Email address</label>
-                    <input type="email" name="email" id="newsletter-email" class="w-full px-4 py-3 rounded-l-lg focus:ring-2 focus:ring-purple-300 focus:outline-none text-gray-800" placeholder="Enter your email" required>
-                    <button type="submit" class="bg-yellow-400 hover:bg-yellow-500 text-purple-700 font-bold py-3 px-6 rounded-r-lg transition duration-300">Subscribe</button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-</main>
-
-<!-- Footer -->
-<footer class="bg-gray-800 text-gray-300 py-12">
-    <div class="container mx-auto px-6">
-        <div
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-            <div>
-                <h3 class="text-xl font-bold text-white mb-4">ElectroMart</h3>
-                <p class="text-sm">
-                    Your trusted source for the latest in electronics and technology.
-                </p>
-            </div>
-            <div>
-                <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="pages/aboutus.html" class="hover:text-purple-400">About Us</a></li>
-                    <li><a href="pages/contactus.html" class="hover:text-purple-400">Contact Us</a></li>
-                    <li><a href="#" class="hover:text-purple-400">FAQ</a></li>
-                    <li><a href="#" class="hover:text-purple-400">Shipping & Returns</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-lg font-semibold text-white mb-4">Customer Service</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:text-purple-400">My Account</a></li>
-                    <li><a href="#" class="hover:text-purple-400">Order Tracking</a></li>
-                    <li><a href="#" class="hover:text-purple-400">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-purple-400">Terms of Service</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
-                <div class="flex space-x-4">
-                    <a href="#" aria-label="Facebook" class="hover:text-purple-400">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M22.675 0h-21.35C-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.325 1.325 1.325h11.395V13.082h-3.128V9.46h3.128V6.637c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.801.713-1.801 1.765v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/>
-                        </svg>
-                    </a>
-                    <a href="#" aria-label="Twitter" class="hover:text-purple-400">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.79 6.05-.497-.025-.99-.08-1.472-.183-4.913 0-9.368-2.635-12.334-6.679-.51.877-.79 1.88-.79 2.983 0 2.024 1.017 3.828 2.553 4.873-.945-.03-1.83-.29-2.6-.723v.066c0 2.953 2.083 5.407 4.843 5.93-.472.129-.96.195-1.462.195-.353 0-.695-.035-1.022-.096.763 2.377 2.989 4.107 5.636 4.156-2.071 1.624-4.661 2.591-7.504 2.591-.489 0-.977-.028-1.462-.081 2.985 1.999 6.517 3.179 10.35 3.179 12.45 0 19.248-10.354 19.248-19.248 0-.3-.015-.592-.04-.882.801-.571 1.499-1.29 2.04-2.105z"/>
-                        </svg>
-                    </a>
-                    <a href="#" aria-label="Instagram" class="hover:text-purple-400">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2.163c3.178 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.425.673.271 1.159.64 1.518 1.09.36.45.729.936 1.09 1.518.176.422.37.957.425 2.227.056 1.265.07 1.672.07 4.85s-.014 3.585-.07 4.85c-.055 1.17-.249 1.805-.425 2.227-.271.673-.64 1.159-1.09 1.518-.45.36-.936.729-1.518 1.09-.422.176-.957.37-2.227.425-1.265.056-1.672.07-4.85.07s-3.585-.014-4.85-.07c-1.17-.055-1.805-.249-2.227-.425-.673-.271-1.159-.64-1.518-1.09-.36-.45-.729.936-1.09-1.518-.176-.422-.37-.957-.425-2.227-.056-1.265-.07-1.672-.07-4.85s.014-3.585.07-4.85c.055-1.17.249-1.805.425-2.227.271-.673.64-1.159 1.09-1.518.45-.36.936-.729 1.518-1.09.422-.176.957-.37 2.227-.425C8.415 2.179 8.822 2.163 12 2.163zm0 1.512c-3.214 0-3.584.016-4.85.071-1.17.055-1.64.233-1.958.36-.54.217-.956.477-1.227.748-.271.271-.531.687-.748 1.227-.127.318-.305.788-.36 1.958-.056 1.265-.071 1.636-.071 4.85s.016 3.584.071 4.85c.055 1.17.233 1.64.36 1.958.217.54.477.956.748 1.227.271.271.687.531 1.227.748.318.127.788.305 1.958.36 1.265.056 1.636.071 4.85.071s3.584-.016 4.85-.071c1.17-.055 1.64-.233 1.958-.36.54-.217.956-.477 1.227-.748.271-.271.531-.687.748-1.227.127-.318.305-.788.36-1.958.056-1.265.071-1.636.071-4.85s-.016-3.584-.071-4.85c-.055-1.17-.233-1.64-.36-1.958-.217-.54-.477-.956-.748-1.227-.271-.271-.687-.531-.748-1.227-.127-.318-.305-.788-.36-1.958-.056-1.265-.071-1.636-.071-4.85zm0 3.672c-2.43 0-4.41 1.98-4.41 4.41s1.98 4.41 4.41 4.41 4.41-1.98 4.41-4.41-1.98-4.41-4.41-4.41zm0 7.215c-1.504 0-2.73-1.225-2.73-2.73s1.226-2.73 2.73-2.73 2.73 1.226 2.73 2.73-1.226 2.73-2.73 2.73zm7.418-10.925c0-.517-.42-.933-.932-.933S19.566 5.83 19.566 6.342s.42.933.932.933 1.227-.416 1.227-.933z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div
-                class="border-t border-gray-700 pt-8 text-center text-sm">
-            <p>&copy; 2025 ElectroMart. All rights reserved.</p>
-            <p>Designed with <span class="text-red-500">&hearts;</span> using Tailwind CSS & Flowbite.</p>
-            <p>រក្សាសិទ្ធិដោយខ្ញុំកូនសិស្ស <span class="text-red-500">&#128511; &#128516;</span></p>
-        </div>
-    </div>
-</footer>
-
-<!-- Sign-In/Sign-Up Modal -->
-<div id="authModal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-    <div class="relative w-full max-w-md p-6 mx-4 bg-white rounded-lg shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:p-8">
-        <!-- Close button -->
-        <button id="closeAuthModal" type="button" class="absolute top-4 right-4 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 inline-flex justify-center items-center">
-            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+          <button
+            aria-label="Search"
+            class="text-gray-600 hover:text-purple-500">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
-            <span class="sr-only">Close modal</span>
+          </button>
+          <a
+            href="#"
+            aria-label="Cart"
+            class="text-gray-600 hover:text-purple-500 relative">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M3 3h2l.4 2H7v2H4.4L7 15h10l3-8H8.4L8 7H3V3zm15 10H7l-2-7h12.75L18 13zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2z"></path>
+            </svg>
+            <span
+              class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
+              >3</span
+            >
+          </a>
+          <button
+            id="openAuthModalButton"
+            type="button"
+            aria-label="Sign In or Sign Up"
+            class="text-gray-600 hover:text-purple-500 p-2">
+            <i class="fas fa-user fa-lg"></i>
+          </button>
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              class="text-gray-600 hover:text-purple-500 focus:outline-none">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  fill-rule="evenodd"
+                  d="M3 5h18M3 12h18M3 19h18"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a
+          href="index.html"
+          class="text-purple-600 bg-purple-50 hover:bg-purple-100 block px-3 py-2 rounded-md text-base font-medium"
+          aria-current="page"
+          >Home</a
+        >
+        <a
+          href="pages/products.html"
+          class="text-gray-700 hover:bg-purple-50 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium"
+          >Products</a
+        >
+        <a
+          href="pages/aboutus.html"
+          class="text-gray-700 hover:bg-purple-50 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium"
+          >About Us</a
+        >
+        <a
+          href="pages/contactus.html"
+          class="text-gray-700 hover:bg-purple-50 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium"
+          >Contact</a
+        >
+        <button
+          id="openAuthModalButtonMobile"
+          type="button"
+          aria-label="Sign In or Sign Up"
+          class="mt-2 w-full flex items-center justify-center text-gray-600 hover:text-purple-500 p-2 hover:bg-purple-50 rounded-md">
+          <i class="fas fa-user fa-lg mr-2"></i> Sign In / Up
         </button>
-
-        <!-- Sign In Form -->
+      </div>
+    </nav>
+    <main class="pt-16">
+      <section class="hero-bg text-white py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+          <h1
+            class="text-4xl md:text-6xl font-bold mb-4 leading-tight hero-text-shadow">
+            Discover the Future of Tech
+          </h1>
+          <p class="text-lg md:text-xl mb-8 hero-text-shadow">
+            Get the latest gadgets and electronics at unbeatable prices.
+          </p>
+          <a
+            href="./pages/product.html"
+            class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300"
+            >Shop Now</a
+          >
+        </div>
+      </section>
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-4xl font-bold text-gray-900 mb-12 text-center tracking-tight">
+            DISCOVER
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <a
+              href="#"
+              class="discover-item group"
+              style="background-image: url('./assets/images/discover_1.png')">
+              <div class="discover-content text-white">
+                <h3 class="text-3xl font-bold mb-2">Next-Gen Laptops</h3>
+                <p class="text-md mb-4 opacity-90">
+                  Powerhouse performance meets sleek design. Perfect for work
+                  and play.
+                </p>
+                <span class="font-semibold group-hover:underline"
+                  >Explore Laptops →</span
+                >
+              </div>
+            </a>
+            <a
+              href="#"
+              class="discover-item group"
+              style="background-image: url('./assets/images/discover_2.png')">
+              <div class="discover-content text-white">
+                <h3 class="text-3xl font-bold mb-2">Smart Home Revolution</h3>
+                <p class="text-md mb-4 opacity-90">
+                  Automate your life with our intelligent home devices.
+                </p>
+                <span class="font-semibold group-hover:underline"
+                  >Shop Smart Home →</span
+                >
+              </div>
+            </a>
+          </div>
+          <div class="mt-8">
+            <a
+              href="#"
+              class="discover-item group block"
+              style="
+                background-image: url('./assets/images/discover_3.png');
+                min-height: 300px;
+              ">
+              <div class="discover-content text-white text-center w-full p-8">
+                <h3 class="text-3xl font-bold mb-2">Immersive Audio Gear</h3>
+                <p class="text-md mb-4 opacity-90">
+                  Headphones, speakers, and sound systems that bring your music
+                  to life.
+                </p>
+                <span class="font-semibold group-hover:underline"
+                  >Discover Audio →</span
+                >
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
+            Shop by Category
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <a href="#" class="block group">
+              <div
+                class="bg-white rounded-lg shadow-lg overflow-hidden transform group-hover:scale-105 transition-transform duration-300">
+                <img
+                  src="./assets/images/laptop.jpg"
+                  alt="Laptops"
+                  class="w-full h-48 object-cover" />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-800">Laptops</h3>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="block group">
+              <div
+                class="bg-white rounded-lg shadow-lg overflow-hidden transform group-hover:scale-105 transition-transform duration-300">
+                <img
+                  src="./assets/images/smartphone.jpg"
+                  alt="Smartphones"
+                  class="w-full h-48 object-cover" />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-800">
+                    Smartphones
+                  </h3>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="block group">
+              <div
+                class="bg-white rounded-lg shadow-lg overflow-hidden transform group-hover:scale-105 transition-transform duration-300">
+                <img src="./union alt="Gaming Accessories" class="w-full h-48
+                object-cover" />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-800">Gaming</h3>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="block group">
+              <div
+                class="bg-white rounded-lg shadow-lg overflow-hidden transform group-hover:scale-105 transition-transform duration-300">
+                <img
+                  src="./assets/images/peripherals.avif"
+                  alt="Peripherals"
+                  class="w-full h-48 object-cover" />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-800">
+                    Peripherals
+                  </h3>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6">
+          <div class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-800">Featured Products</h2>
+            <a
+              href="./pages/product.html"
+              class="text-purple-600 hover:text-purple-800 font-semibold transition duration-300">
+              View All Products →
+            </a>
+          </div>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <article
+              class="bg-white rounded-lg shadow-lg overflow-hidden group">
+              <a href="pages/product-detail.html" class="block">
+                <img
+                  src="./assets/images/aerk_book_pro.jpg"
+                  alt="Modern Laptop"
+                  class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity duration-300" />
+              </a>
+              <div class="p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                  <a
+                    href="pages/product-detail.html"
+                    class="hover:text-purple-600"
+                    >AeroBook Pro 15</a
+                  >
+                </h3>
+                <p class="text-sm text-gray-600 mb-3">
+                  High-performance laptop for professionals.
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-xl font-bold text-purple-600"
+                    >$1299.99</span
+                  >
+                  <button
+                    class="bg-purple-500 hover:bg-purple-600 text-white text-sm font-semibold py-2 px-4 rounded-lg transition duration-300">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="bg-white rounded-lg shadow-lg overflow-hidden group">
+              <a href="pages/product-detail.html" class="block">
+                <img
+                  src="./assets/images/pixel_phone.jpg"
+                  alt="Smartphone X"
+                  class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity duration-300" />
+              </a>
+              <div class="p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                  <a
+                    href="pages/product-detail.html"
+                    class="hover:text-purple-600"
+                    >PixelWave Phone</a
+                  >
+                </h3>
+                <p class="text-sm text-gray-600 mb-3">
+                  Latest smartphone with AI camera.
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-xl font-bold text-purple-600">$799.00</span>
+                  <button
+                    class="bg-purple-500 hover:bg-purple-600 text-white text-sm font-semibold py-2 px-4 rounded-lg transition duration-300">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="bg-white rounded-lg shadow-lg overflow-hidden group">
+              <a href="pages/product-detail.html" class="block">
+                <img
+                  src="./assets/images/soundpeats.jpg"
+                  alt="Wireless Headphones"
+                  class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity duration-300" />
+              </a>
+              <div class="p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                  <a
+                    href="pages/product-detail.html"
+                    class="hover:text-purple-600"
+                    >SoundWave Buds</a
+                  >
+                </h3>
+                <p class="text-sm text-gray-600 mb-3">
+                  Noise-cancelling wireless headphones.
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-xl font-bold text-purple-600">$199.50</span>
+                  <button
+                    class="bg-purple-500 hover:bg-purple-600 text-white text-sm font-semibold py-2 px-4 rounded-lg transition duration-300">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
+            Discover Our Top Brands & Features
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <a
+              href="#"
+              class="block group rounded-lg shadow-lg overflow-hidden">
+              <div
+                class="brand-card relative text-white flex flex-col justify-end p-6"
+                style="
+                  background-image: url('./assets/images/apple_ecosystem.jpg');
+                ">
+                <div
+                  class="absolute inset-0 bg-black opacity-40 group-hover:opacity-50 transition-opacity duration-300"></div>
+                <div class="relative z-10">
+                  <h3 class="text-2xl font-bold">Apple Ecosystem</h3>
+                  <p class="text-sm mt-1">
+                    Experience seamless integration with iPhone, Mac, and iPad.
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="block group rounded-lg shadow-lg overflow-hidden">
+              <div
+                class="brand-card relative text-white flex flex-col justify-end p-6"
+                style="
+                  background-image: url('./assets/images/samsung_innovation.jpeg');
+                ">
+                <div
+                  class="absolute inset-0 bg-black opacity-40 group-hover:opacity-50 transition-opacity duration-300"></div>
+                <div class="relative z-10">
+                  <h3 class="text-2xl font-bold">Samsung Innovation</h3>
+                  <p class="text-sm mt-1">
+                    Cutting-edge displays and powerful Galaxy devices.
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="block group rounded-lg shadow-lg overflow-hidden">
+              <div
+                class="brand-card relative text-white flex flex-col justify-end p-6"
+                style="
+                  background-image: url('./assets/images/ultimate_gaming.jpg');
+                ">
+                <div
+                  class="absolute inset-0 bg-black opacity-40 group-hover:opacity-50 transition-opacity duration-300"></div>
+                <div class="relative z-10">
+                  <h3 class="text-2xl font-bold">Ultimate Gaming</h3>
+                  <p class="text-sm mt-1">
+                    High-performance PCs and next-gen consoles.
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="py-12 bg-gray-800 text-white">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold mb-6">See Our Products in Action</h2>
+          <p class="mb-8 text-gray-300 max-w-2xl mx-auto">
+            Watch this short clip showcasing the amazing features and designs we
+            offer.
+          </p>
+          <div class="video-aspect-ratio rounded-lg overflow-hidden shadow-2xl">
+            <video
+              autoplay
+              loop
+              muted
+              playsinline
+              poster="./assets/gif/inaction2.gif">
+              <source src="./assets/gif/inaction2.gif" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
+      <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-gray-800 mb-10 text-center">
+            Our Services
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div
+              class="bg-gray-50 p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div class="text-purple-600 mb-4">
+                <svg
+                  class="w-16 h-16 mx-auto"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Expert Repairs
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Fast and reliable repair services for your devices. Screen
+                replacements, battery issues, and more.
+              </p>
+              <a
+                href="#"
+                class="mt-4 inline-block text-purple-600 hover:text-purple-800 font-semibold"
+                >Learn More →</a
+              >
+            </div>
+            <div
+              class="bg-gray-50 p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div class="text-purple-600 mb-4">
+                <svg
+                  class="w-16 h-16 mx-auto"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Trade-In Program
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Get value for your old devices when you upgrade to the latest
+                tech with our easy trade-in process.
+              </p>
+              <a
+                href="#"
+                class="mt-4 inline-block text-purple-600 hover:text-purple-800 font-semibold"
+                >See Trade-In Values →</a
+              >
+            </div>
+            <div
+              class="bg-gray-50 p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div class="text-purple-600 mb-4">
+                <svg
+                  class="w-16 h-16 mx-auto"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M18.364 5.636l-3.536 3.536m0 0a3 3 0 104.243 4.243l3.536-3.536m-8.486 8.486l-3.536-3.536m0 0a3 3 0 10-4.243-4.243l3.536 3.536M12 18.75V21m-3.75-3.75H6m12 0h-2.25m-6.75 0H9.75M12 5.25V3m3.75 3.75H18m-12 0h2.25m6.75 0h-2.25M12 12a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Tech Support
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Our experts are here to help you with setup, troubleshooting,
+                and any tech questions you have.
+              </p>
+              <a
+                href="pages/contactus.html"
+                class="mt-4 inline-block text-purple-600 hover:text-purple-800 font-semibold"
+                >Get Support →</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
+            Recommended Accessories
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <article
+              class="bg-white rounded-lg shadow-lg overflow-hidden group">
+              <a href="pages/product-detail.html?id=acc1" class="block">
+                <img
+                  src="./assets/images/soundpeats.jpg"
+                  alt="Premium Headphones"
+                  class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity duration-300" />
+              </a>
+              <div class="p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                  <a
+                    href="pages/product-detail.html?id=acc1"
+                    class="hover:text-purple-600"
+                    >AuraSound Headphones</a
+                  >
+                </h3>
+                <p class="text-sm text-gray-600 mb-3">
+                  Immersive audio experience.
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-xl font-bold text-purple-600">$149.99</span>
+                  <button
+                    class="bg-purple-500 hover:bg-purple-600 text-white text-sm font-semibold py-2 px-4 rounded-lg transition duration-300">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="bg-white rounded-lg shadow-lg overflow-hidden group">
+              <a href="pages/product-detail.html?id=acc2" class="block">
+                <img
+                  src="./assets/images/glidepro_wireless_mouse.png"
+                  alt="Wireless Mouse"
+                  class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity duration-300" />
+              </a>
+              <div class="p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                  <a
+                    href="pages/product-detail.html?id=acc2"
+                    class="hover:text-purple-600"
+                    >GlidePro Wireless Mouse</a
+                  >
+                </h3>
+                <p class="text-sm text-gray-600 mb-3">Ergonomic and precise.</p>
+                <div class="flex justify-between items-center">
+                  <span class="text-xl font-bold text-purple-600">$49.00</span>
+                  <button
+                    class="bg-purple-500 hover:bg-purple-600 text-white text-sm font-semibold py-2 px-4 rounded-lg transition duration-300">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="bg-white rounded-lg shadow-lg overflow-hidden group">
+              <a href="pages/product-detail.html?id=acc3" class="block">
+                <img
+                  src="./assets/images/laptop_sleeve .png"
+                  alt="Laptop Sleeve"
+                  class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity duration-300" />
+              </a>
+              <div class="p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                  <a
+                    href="pages/product-detail.html?id=acc3"
+                    class="hover:text-purple-600"
+                    >Guardian Laptop Sleeve</a
+                  >
+                </h3>
+                <p class="text-sm text-gray-600 mb-3">
+                  Stylish protection for your device.
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-xl font-bold text-purple-600">$29.50</span>
+                  <button
+                    class="bg-purple-500 hover:bg-purple-600 text-white text-sm font-semibold py-2 px-4 rounded-lg transition duration-300">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="bg-white rounded-lg shadow-lg overflow-hidden group">
+              <a href="pages/product-detail.html?id=acc4" class="block">
+                <img
+                  src="./assets/images/portable_charger.jpeg"
+                  alt="Portable Charger"
+                  class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity duration-300" />
+              </a>
+              <div class="p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                  <a
+                    href="pages/product-detail.html?id=acc4"
+                    class="hover:text-purple-600"
+                    >PowerUp Portable Charger</a
+                  >
+                </h3>
+                <p class="text-sm text-gray-600 mb-3">
+                  Keep your devices charged on the go.
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-xl font-bold text-purple-600">$39.99</span>
+                  <button
+                    class="bg-purple-500 hover:bg-purple-600 text-white text-sm font-semibold py-2 px-4 rounded-lg transition duration-300">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="py-12 bg-purple-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold mb-4">Stay Updated!</h2>
+          <p class="mb-6">
+            Subscribe to our newsletter for the latest deals and product
+            announcements.
+          </p>
+          <form class="max-w-md mx-auto">
+            <div class="flex items-center">
+              <label for="newsletter-email" class="sr-only"
+                >Email address</label
+              >
+              <input
+                type="email"
+                name="email"
+                id="newsletter-email"
+                class="w-full px-4 py-3 rounded-l-lg focus:ring-2 focus:ring-purple-300 focus:outline-none text-gray-800"
+                placeholder="Enter your email"
+                required />
+              <button
+                type="submit"
+                class="bg-yellow-400 hover:bg-yellow-500 text-purple-700 font-bold py-3 px-6 rounded-r-lg transition duration-300">
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-gray-800 text-gray-300 py-12">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h3 class="text-xl font-bold text-white mb-4">ElectroMart</h3>
+            <p class="text-sm">
+              Your trusted source for the latest in electronics and technology.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a href="./pages/aboutus.html" class="hover:text-purple-400"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="./pages/contactus.html" class="hover:text-purple-400"
+                  >Contact Us</a
+                >
+              </li>
+              <li><a href="#" class="hover:text-purple-400">FAQ</a></li>
+              <li>
+                <a href="#" class="hover:text-purple-400">Shipping & Returns</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">
+              Customer Service
+            </h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-purple-400">My Account</a></li>
+              <li>
+                <a href="#" class="hover:text-purple-400">Order Tracking</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-purple-400">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-purple-400">Terms of Service</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+            <div class="flex space-x-4">
+              <a href="#" aria-label="Facebook" class="hover:text-purple-400">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M22.675 0h-21.35C-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.325 1.325 1.325h11.395V13.082h-3.128V9.46h3.128V6.637c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.801.713-1.801 1.765v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z" />
+                </svg>
+              </a>
+              <a href="#" aria-label="Twitter" class="hover:text-purple-400">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.79 6.05-.497-.025-.99-.08-1.472-.183-4.913 0-9.368-2.635-12.334-6.679-.51.877-.79 1.88-.79 2.983 0 2.024 1.017 3.828 2.553 4.873-.945-.03-1.83-.29-2.6-.723v.066c0 2.953 2.083 5.407 4.843 5.93-.472.129-.96.195-1.462.195-.353 0-.695-.035-1.022-.096.763 2.377 2.989 4.107 5.636 4.156-2.071 1.624-4.661 2.591-7.504 2.591-.489 0-.977-.028-1.462-.081 2.985 1.999 6.517 3.179 10.35 3.179 12.45 0 19.248-10.354 19.248-19.248 0-.3-.015-.592-.04-.882.801-.571 1.499-1.29 2.04-2.105z" />
+                </svg>
+              </a>
+              <a href="#" aria-label="Instagram" class="hover:text-purple-400">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.178 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.425.673.271 1.159.64 1.518 1.09.36.45.729.936 1.09 1.518.176.422.37.957.425 2.227.056 1.265.07 1.672.07 4.85s-.014 3.585-.07 4.85c-.055 1.17-.249 1.805-.425 2.227-.271.673-.64 1.159-1.09 1.518-.45.36-.936.729-1.518 1.09-.422.176-.957.37-2.227.425-1.265.056-1.672.07-4.85.07s-3.585-.014-4.85-.07c-1.17-.055-1.805-.249-2.227-.425-.673-.271-1.159-.64-1.518-1.09-.36-.45-.729.936-1.09-1.518-.176-.422-.37-.957-.425-2.227-.056-1.265-.07-1.672-.07-4.85s.014-3.585.07-4.85c.055-1.17.249-1.805.425-2.227.271-.673.64-1.159 1.09-1.518.45-.36.936-.729 1.518-1.09.422-.176.957-.37 2.227-.425C8.415 2.179 8.822 2.163 12 2.163zm0 1.512c-3.214 0-3.584.016-4.85.071-1.17.055-1.64.233-1.958.36-.54.217-.956.477-1.227.748-.271.271-.531.687-.748 1.227-.127.318-.305.788-.36 1.958-.056 1.265-.071 1.636-.071 4.85s.016 3.584.071 4.85c.055 1.17.233 1.64.36 1.958.217.54.477.956.748 1.227.271.271.687.531 1.227.748.318.127.788.305 1.958.36 1.265.056 1.636.071 4.85.071s3.584-.016 4.85-.071c1.17-.055 1.64-.233 1.958-.36.54-.217.956-.477 1.227-.748.271-.271.531-.687.748-1.227.127-.318.305-.788.36-1.958.056-1.265.071-1.636.071-4.85s-.016-3.584-.071-4.85c-.055-1.17-.233-1.64-.36-1.958-.217-.54-.477-.956-.748-1.227-.271-.271-.687-.531-.748-1.227-.127-.318-.305-.788-.36-1.958-.056-1.265-.071-1.636-.071-4.85zm0 3.672c-2.43 0-4.41 1.98-4.41 4.41s1.98 4.41 4.41 4.41 4.41-1.98 4.41-4.41-1.98-4.41-4.41-4.41zm0 7.215c-1.504 0-2.73-1.225-2.73-2.73s1.226-2.73 2.73-2.73 2.73 1.226 2.73 2.73-1.226 2.73-2.73 2.73zm7.418-10.925c0-.517-.42-.933-.932-.933S19.566 5.83 19.566 6.342s.42.933.932.933 1.227-.416 1.227-.933z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 pt-8 text-center text-sm">
+          <p>© 2025 ElectroMart. All rights reserved.</p>
+          <p>
+            Designed with <span class="text-red-500">♥</span> using Tailwind CSS
+            & Flowbite.
+          </p>
+          <p>
+            រក្សាសិទ្ធិដោយខ្ញុំកូនសិស្ស
+            <span class="text-red-500">🗿 😄</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <div
+      id="authModal"
+      class="fixed inset-0 z-[60] hidden items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true">
+      <div
+        class="relative w-full max-w-md p-6 mx-4 bg-white rounded-lg shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:p-8">
+        <button
+          id="closeAuthModal"
+          type="button"
+          class="absolute top-4 right-4 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 inline-flex justify-center items-center">
+          <svg
+            class="w-3 h-3"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 14">
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+          </svg>
+          <span class="sr-only">Close modal</span>
+        </button>
         <div id="signInForm">
-            <h3 id="modal-title-signin" class="mb-6 text-2xl font-semibold text-center text-gray-900">Sign in</h3>
-            <form class="space-y-6" action="#">
-                <div>
-                    <label for="signInEmail" class="block mb-2 text-sm font-medium text-gray-900">Your email</label>
-                    <input type="email" name="email" id="signInEmail" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5" placeholder="name@company.com" required>
+          <h3
+            id="modal-title-signin"
+            class="mb-6 text-2xl font-semibold text-center text-gray-900">
+            Sign in
+          </h3>
+          <form class="space-y-6" action="#">
+            <div>
+              <label
+                for="signInEmail"
+                class="block mb-2 text-sm font-medium text-gray-900"
+                >Your email</label
+              >
+              <input
+                type="email"
+                name="email"
+                id="signInEmail"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5"
+                placeholder="name@company.com"
+                required />
+            </div>
+            <div>
+              <label
+                for="signInPassword"
+                class="block mb-2 text-sm font-medium text-gray-900"
+                >Your password</label
+              >
+              <input
+                type="password"
+                name="password"
+                id="signInPassword"
+                placeholder="••••••••"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5"
+                required />
+            </div>
+            <div class="flex justify-between">
+              <div class="flex items-start">
+                <div class="flex items-center h-5">
+                  <input
+                    id="remember"
+                    type="checkbox"
+                    value=""
+                    class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-purple-300" />
                 </div>
-                <div>
-                    <label for="signInPassword" class="block mb-2 text-sm font-medium text-gray-900">Your password</label>
-                    <input type="password" name="password" id="signInPassword" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5" required>
-                </div>
-                <div class="flex justify-between">
-                    <div class="flex items-start">
-                        <div class="flex items-center h-5">
-                            <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-purple-300">
-                        </div>
-                        <label for="remember" class="ms-2 text-sm font-medium text-gray-900">Remember me</label>
-                    </div>
-                    <a href="#" class="text-sm text-purple-700 hover:underline">Lost Password?</a>
-                </div>
-                <button type="submit" class="w-full text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-3 text-center">Login to your account</button>
-                <div class="text-sm font-medium text-gray-500 text-center">
-                    Not registered?
-                    <button type="button" id="showSignUp" class="text-purple-700 hover:underline font-semibold">Create account</button>
-                </div>
-            </form>
+                <label
+                  for="remember"
+                  class="ms-2 text-sm font-medium text-gray-900"
+                  >Remember me</label
+                >
+              </div>
+              <a href="#" class="text-sm text-purple-700 hover:underline"
+                >Lost Password?</a
+              >
+            </div>
+            <button
+              type="submit"
+              class="w-full text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-3 text-center">
+              Login to your account
+            </button>
+            <div class="text-sm font-medium text-gray-500 text-center">
+              Not registered?
+              <button
+                type="button"
+                id="showSignUp"
+                class="text-purple-700 hover:underline font-semibold">
+                Create account
+              </button>
+            </div>
+          </form>
         </div>
-
-        <!-- Sign Up Form (initially hidden) -->
         <div id="signUpForm" class="hidden">
-            <h3 id="modal-title-signup" class="mb-6 text-2xl font-semibold text-center text-gray-900">Create an Account</h3>
-            <form class="space-y-6" action="#">
-                <div>
-                    <label for="signUpEmail" class="block mb-2 text-sm font-medium text-gray-900">Your email</label>
-                    <input type="email" name="email" id="signUpEmail" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5" placeholder="name@company.com" required>
-                </div>
-                <div>
-                    <label for="signUpPassword" class="block mb-2 text-sm font-medium text-gray-900">Password</label>
-                    <input type="password" name="password" id="signUpPassword" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5" required>
-                </div>
-                <div>
-                    <label for="confirmPassword" class="block mb-2 text-sm font-medium text-gray-900">Confirm password</label>
-                    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5" required>
-                </div>
-                <div class="flex items-start">
-                    <div class="flex items-center h-5">
-                        <input id="terms" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-purple-300" required>
-                    </div>
-                    <label for="terms" class="ms-2 text-sm font-medium text-gray-900">I agree to the <a href="#" class="text-purple-700 hover:underline">terms and conditions</a></label>
-                </div>
-                <button type="submit" class="w-full text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-3 text-center">Create account</button>
-                <div class="text-sm font-medium text-gray-500 text-center">
-                    Already have an account?
-                    <button type="button" id="showSignIn" class="text-purple-700 hover:underline font-semibold">Login</button>
-                </div>
-            </form>
+          <h3
+            id="modal-title-signup"
+            class="mb-6 text-2xl font-semibold text-center text-gray-900">
+            Create an Account
+          </h3>
+          <form class="space-y-6" action="#">
+            <div>
+              <label
+                for="signUpEmail"
+                class="block mb-2 text-sm font-medium text-gray-900"
+                >Your email</label
+              >
+              <input
+                type="email"
+                name="email"
+                id="signUpEmail"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5"
+                placeholder="name@company.com"
+                required />
+            </div>
+            <div>
+              <label
+                for="signUpPassword"
+                class="block mb-2 text-sm font-medium text-gray-900"
+                >Password</label
+              >
+              <input
+                type="password"
+                name="password"
+                id="signUpPassword"
+                placeholder="••••••••"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5"
+                required />
+            </div>
+            <div>
+              <label
+                for="confirmPassword"
+                class="block mb-2 text-sm font-medium text-gray-900"
+                >Confirm password</label
+              >
+              <input
+                type="password"
+                name="confirmPassword"
+                id="confirmPassword"
+                placeholder="••••••••"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5"
+                required />
+            </div>
+            <div class="flex items-start">
+              <div class="flex items-center h-5">
+                <input
+                  id="terms"
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-purple-300"
+                  required />
+              </div>
+              <label for="terms" class="ms-2 text-sm font-medium text-gray-900"
+                >I agree to the
+                <a href="#" class="text-purple-700 hover:underline"
+                  >terms and conditions</a
+                ></label
+              >
+            </div>
+            <button
+              type="submit"
+              class="w-full text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-3 text-center">
+              Create account
+            </button>
+            <div class="text-sm font-medium text-gray-500 text-center">
+              Already have an account?
+              <button
+                type="button"
+                id="showSignIn"
+                class="text-purple-700 hover:underline font-semibold">
+                Login
+              </button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
-</div>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script>
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
 
-
-<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
-<script>
-    // Mobile Menu Toggle
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
         });
-    }
+      }
 
-    // Auth Modal Elements
-    const authModal = document.getElementById('authModal');
-    const openAuthModalButton = document.getElementById('openAuthModalButton');
-    const openAuthModalButtonMobile = document.getElementById('openAuthModalButtonMobile'); // Mobile trigger
-    const closeAuthModalButton = document.getElementById('closeAuthModal');
-    const signInForm = document.getElementById('signInForm');
-    const signUpForm = document.getElementById('signUpForm');
-    const showSignUpButton = document.getElementById('showSignUp');
-    const showSignInButton = document.getElementById('showSignIn');
+      const authModal = document.getElementById("authModal");
+      const openAuthModalButton = document.getElementById(
+        "openAuthModalButton"
+      );
+      const openAuthModalButtonMobile = document.getElementById(
+        "openAuthModalButtonMobile"
+      );
+      const closeAuthModalButton = document.getElementById("closeAuthModal");
+      const signInForm = document.getElementById("signInForm");
+      const signUpForm = document.getElementById("signUpForm");
+      const showSignUpButton = document.getElementById("showSignUp");
+      const showSignInButton = document.getElementById("showSignIn");
 
-    // Function to open the modal
-    function openModal() {
+      function openModal() {
         if (authModal) {
-            authModal.classList.remove('hidden');
-            authModal.classList.add('flex');
-            // Default to sign-in form
-            signInForm.classList.remove('hidden');
-            signUpForm.classList.add('hidden');
-            document.body.classList.add('overflow-hidden'); // Prevent background scroll
+          authModal.classList.remove("hidden");
+          authModal.classList.add("flex");
+          signInForm.classList.remove("hidden");
+          signUpForm.classList.add("hidden");
+          document.body.classList.add("overflow-hidden");
         }
-    }
+      }
 
-    // Function to close the modal
-    function closeModal() {
+      function closeModal() {
         if (authModal) {
-            authModal.classList.add('hidden');
-            authModal.classList.remove('flex');
-            document.body.classList.remove('overflow-hidden'); // Restore background scroll
+          authModal.classList.add("hidden");
+          authModal.classList.remove("flex");
+          document.body.classList.remove("overflow-hidden");
         }
-    }
+      }
 
-    // Event Listeners for modal triggers
-    if (openAuthModalButton) {
-        openAuthModalButton.addEventListener('click', openModal);
-    }
-    if (openAuthModalButtonMobile) { // Listener for mobile button
-        openAuthModalButtonMobile.addEventListener('click', () => {
-            openModal();
-            if (mobileMenu && !mobileMenu.classList.contains('hidden')) { // Close mobile menu if open
-                mobileMenu.classList.add('hidden');
-            }
+      if (openAuthModalButton) {
+        openAuthModalButton.addEventListener("click", openModal);
+      }
+      if (openAuthModalButtonMobile) {
+        openAuthModalButtonMobile.addEventListener("click", () => {
+          openModal();
+          if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+            mobileMenu.classList.add("hidden");
+          }
         });
-    }
-    if (closeAuthModalButton) {
-        closeAuthModalButton.addEventListener('click', closeModal);
-    }
+      }
+      if (closeAuthModalButton) {
+        closeAuthModalButton.addEventListener("click", closeModal);
+      }
 
-    // Close modal if backdrop is clicked
-    if (authModal) {
-        authModal.addEventListener('click', (event) => {
-            if (event.target === authModal) {
-                closeModal();
-            }
+      if (authModal) {
+        authModal.addEventListener("click", (event) => {
+          if (event.target === authModal) {
+            closeModal();
+          }
         });
-    }
+      }
 
-    // Switch between Sign In and Sign Up forms
-    if (showSignUpButton) {
-        showSignUpButton.addEventListener('click', () => {
-            signInForm.classList.add('hidden');
-            signUpForm.classList.remove('hidden');
+      if (showSignUpButton) {
+        showSignUpButton.addEventListener("click", () => {
+          signInForm.classList.add("hidden");
+          signUpForm.classList.remove("hidden");
         });
-    }
+      }
 
-    if (showSignInButton) {
-        showSignInButton.addEventListener('click', () => {
-            signUpForm.classList.add('hidden');
-            signInForm.classList.remove('hidden');
+      if (showSignInButton) {
+        showSignInButton.addEventListener("click", () => {
+          signUpForm.classList.add("hidden");
+          signInForm.classList.remove("hidden");
         });
-    }
-</script>
-</body>
+      }
+    </script>
+  </body>
 </html>
